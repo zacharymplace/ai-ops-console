@@ -1,0 +1,117 @@
+{
+  "generatedAt": "2026-05-20T17:00:58.666Z",
+  "cases": 6,
+  "passed": 6,
+  "failed": 0,
+  "score": 100,
+  "results": [
+    {
+      "id": "vendor-location-closures",
+      "passed": true,
+      "categoryPassed": true,
+      "riskPassed": true,
+      "urgencyPassed": true,
+      "expected": {
+        "category": "vendor_notice",
+        "riskLevel": "high",
+        "urgency": 9
+      },
+      "actual": {
+        "category": "vendor_notice",
+        "riskLevel": "high",
+        "urgency": 9
+      },
+      "rationale": "Vendor closure affecting stores is a business continuity risk."
+    },
+    {
+      "id": "invoice-consolidation",
+      "passed": true,
+      "categoryPassed": true,
+      "riskPassed": true,
+      "urgencyPassed": true,
+      "expected": {
+        "category": "invoice_or_payment",
+        "riskLevel": "medium",
+        "urgency": 6
+      },
+      "actual": {
+        "category": "invoice_or_payment",
+        "riskLevel": "medium",
+        "urgency": 6
+      },
+      "rationale": "Billing process change requires review but is not automatically critical."
+    },
+    {
+      "id": "legal-compliance-breach",
+      "passed": true,
+      "categoryPassed": true,
+      "riskPassed": true,
+      "urgencyPassed": true,
+      "expected": {
+        "category": "compliance_risk",
+        "riskLevel": "high",
+        "urgency": 9
+      },
+      "actual": {
+        "category": "compliance_risk",
+        "riskLevel": "high",
+        "urgency": 9
+      },
+      "rationale": "Legal/compliance breach with urgent timing requires escalation."
+    },
+    {
+      "id": "simple-process-cleanup",
+      "passed": true,
+      "categoryPassed": true,
+      "riskPassed": true,
+      "urgencyPassed": true,
+      "expected": {
+        "category": "internal_ops",
+        "riskLevel": "low",
+        "urgency": 3
+      },
+      "actual": {
+        "category": "internal_ops",
+        "riskLevel": "low",
+        "urgency": 3
+      },
+      "rationale": "Routine process cleanup is low risk."
+    },
+    {
+      "id": "customer-complaint",
+      "passed": true,
+      "categoryPassed": true,
+      "riskPassed": true,
+      "urgencyPassed": true,
+      "expected": {
+        "category": "customer_support",
+        "riskLevel": "medium",
+        "urgency": 6
+      },
+      "actual": {
+        "category": "customer_support",
+        "riskLevel": "medium",
+        "urgency": 6
+      },
+      "rationale": "Customer complaint needs timely handling but is not inherently high risk."
+    },
+    {
+      "id": "unknown-general-note",
+      "passed": true,
+      "categoryPassed": true,
+      "riskPassed": true,
+      "urgencyPassed": true,
+      "expected": {
+        "category": "unknown",
+        "riskLevel": "low",
+        "urgency": 3
+      },
+      "actual": {
+        "category": "unknown",
+        "riskLevel": "low",
+        "urgency": 3
+      },
+      "rationale": "Generic input should not be overclassified."
+    }
+  ]
+}

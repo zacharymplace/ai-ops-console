@@ -1,0 +1,22 @@
+[
+  {
+    "id": "10514f4b-4172-4782-863b-1d52970e6966",
+    "createdAt": "2026-05-20T16:58:02.930Z",
+    "rawText": "Vendor is closing business locations that impact our stores in the next 90 days.",
+    "category": "vendor_notice",
+    "urgency": 3,
+    "riskLevel": "low",
+    "suggestedAction": "Review, confirm classification, and assign next owner.",
+    "status": "new"
+  },
+  {
+    "id": "d21c62b2-a30a-445e-bb0e-5bba261eb553",
+    "createdAt": "2026-05-20T16:57:35.700Z",
+    "rawText": "Customer wants the invoice header redacted and for daily billings to go through on one invoice only.",
+    "category": "invoice_or_payment",
+    "urgency": 6,
+    "riskLevel": "medium",
+    "suggestedAction": "Review, confirm classification, and assign next owner.",
+    "status": "new"
+  }
+]

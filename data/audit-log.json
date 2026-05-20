@@ -1,0 +1,18 @@
+[
+  {
+    "id": "ac8b38db-ad28-4f2e-9409-f940d99ec02c",
+    "requestId": "10514f4b-4172-4782-863b-1d52970e6966",
+    "createdAt": "2026-05-20T16:58:02.932Z",
+    "actor": "system",
+    "action": "classified_request",
+    "detail": "Classified as vendor_notice, risk low, urgency 3."
+  },
+  {
+    "id": "3615d3b8-7633-4192-9a98-91f4a35a7ca6",
+    "requestId": "d21c62b2-a30a-445e-bb0e-5bba261eb553",
+    "createdAt": "2026-05-20T16:57:35.704Z",
+    "actor": "system",
+    "action": "classified_request",
+    "detail": "Classified as invoice_or_payment, risk medium, urgency 6."
+  }
+]
