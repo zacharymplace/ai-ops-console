@@ -1,5 +1,53 @@
 [
   {
+    "id": "655ddb70-8de0-4d8c-8a2f-e233d6a06117",
+    "requestId": "10514f4b-4172-4782-863b-1d52970e6966",
+    "createdAt": "2026-05-20T17:05:54.737Z",
+    "actor": "system",
+    "action": "reclassified_request",
+    "detail": "Category: vendor_notice -> vendor_notice; Risk: high -> high; Urgency: 9 -> 9"
+  },
+  {
+    "id": "2c89187a-e658-4153-af13-7da903668823",
+    "requestId": "10514f4b-4172-4782-863b-1d52970e6966",
+    "createdAt": "2026-05-20T17:05:53.940Z",
+    "actor": "system",
+    "action": "reclassified_request",
+    "detail": "Category: vendor_notice -> vendor_notice; Risk: high -> high; Urgency: 9 -> 9"
+  },
+  {
+    "id": "5764092b-8d49-470b-9dbf-eaaa997ec46a",
+    "requestId": "10514f4b-4172-4782-863b-1d52970e6966",
+    "createdAt": "2026-05-20T17:05:52.419Z",
+    "actor": "human",
+    "action": "request_rejected",
+    "detail": "Human review completed without additional note."
+  },
+  {
+    "id": "305adc5d-046d-4f78-91ed-95a32552d504",
+    "requestId": "d21c62b2-a30a-445e-bb0e-5bba261eb553",
+    "createdAt": "2026-05-20T17:05:50.542Z",
+    "actor": "system",
+    "action": "reclassified_request",
+    "detail": "Category: invoice_or_payment -> invoice_or_payment; Risk: medium -> medium; Urgency: 6 -> 6"
+  },
+  {
+    "id": "356671e3-f321-4f19-bc91-aafcf31b980a",
+    "requestId": "d21c62b2-a30a-445e-bb0e-5bba261eb553",
+    "createdAt": "2026-05-20T17:05:49.483Z",
+    "actor": "system",
+    "action": "reclassified_request",
+    "detail": "Category: invoice_or_payment -> invoice_or_payment; Risk: medium -> medium; Urgency: 6 -> 6"
+  },
+  {
+    "id": "9989e62b-ccf1-4aba-94ac-bb723cb49119",
+    "requestId": "10514f4b-4172-4782-863b-1d52970e6966",
+    "createdAt": "2026-05-20T17:05:47.123Z",
+    "actor": "system",
+    "action": "reclassified_request",
+    "detail": "Category: vendor_notice -> vendor_notice; Risk: low -> high; Urgency: 3 -> 9"
+  },
+  {
     "id": "f73fd036-9260-4ad0-b6d4-9905620ee482",
     "requestId": "10514f4b-4172-4782-863b-1d52970e6966",
     "createdAt": "2026-05-20T17:03:25.480Z",

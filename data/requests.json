@@ -4,10 +4,10 @@
     "createdAt": "2026-05-20T16:58:02.930Z",
     "rawText": "Vendor is closing business locations that impact our stores in the next 90 days.",
     "category": "vendor_notice",
-    "urgency": 3,
-    "riskLevel": "low",
-    "suggestedAction": "Review, confirm classification, and assign next owner.",
-    "status": "approved"
+    "urgency": 9,
+    "riskLevel": "high",
+    "suggestedAction": "Escalate for human review before action.",
+    "status": "rejected"
   },
   {
     "id": "d21c62b2-a30a-445e-bb0e-5bba261eb553",

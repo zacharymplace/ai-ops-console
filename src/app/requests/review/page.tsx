@@ -1,4 +1,4 @@
-import { reviewOpsRequest } from "@/app/actions";
+import { reclassifyOpsRequest, reviewOpsRequest } from "@/app/actions";
 import { getRequests } from "@/lib/data/store";
 
 export default async function ReviewQueuePage() {
@@ -50,42 +50,51 @@ export default async function ReviewQueuePage() {
                 </p>
               ) : null}
 
-              <form action={reviewOpsRequest} className="mt-5 space-y-3">
-                <input type="hidden" name="requestId" value={request.id} />
+              <div className="mt-5 space-y-3">
+                <form action={reviewOpsRequest} className="space-y-3">
+                  <input type="hidden" name="requestId" value={request.id} />
 
-                <textarea
-                  name="reviewerNote"
-                  rows={2}
-                  className="w-full rounded-lg border p-3 text-sm"
-                  placeholder="Add reviewer note..."
-                />
+                  <textarea
+                    name="reviewerNote"
+                    rows={2}
+                    className="w-full rounded-lg border p-3 text-sm"
+                    placeholder="Add reviewer note..."
+                  />
 
-                <div className="flex flex-wrap gap-2">
-                  <button
-                    name="decision"
-                    value="reviewed"
-                    className="rounded-lg border px-3 py-2 text-sm"
-                  >
-                    Mark reviewed
+                  <div className="flex flex-wrap gap-2">
+                    <button
+                      name="decision"
+                      value="reviewed"
+                      className="rounded-lg border px-3 py-2 text-sm"
+                    >
+                      Mark reviewed
+                    </button>
+
+                    <button
+                      name="decision"
+                      value="approved"
+                      className="rounded-lg bg-zinc-950 px-3 py-2 text-sm text-white"
+                    >
+                      Approve
+                    </button>
+
+                    <button
+                      name="decision"
+                      value="rejected"
+                      className="rounded-lg border px-3 py-2 text-sm"
+                    >
+                      Reject
+                    </button>
+                  </div>
+                </form>
+
+                <form action={reclassifyOpsRequest}>
+                  <input type="hidden" name="requestId" value={request.id} />
+                  <button className="rounded-lg border border-dashed px-3 py-2 text-sm text-zinc-600">
+                    Reclassify with current rules
                   </button>
-
-                  <button
-                    name="decision"
-                    value="approved"
-                    className="rounded-lg bg-zinc-950 px-3 py-2 text-sm text-white"
-                  >
-                    Approve
-                  </button>
-
-                  <button
-                    name="decision"
-                    value="rejected"
-                    className="rounded-lg border px-3 py-2 text-sm"
-                  >
-                    Reject
-                  </button>
-                </div>
-              </form>
+                </form>
+              </div>
             </article>
           ))
         )}
