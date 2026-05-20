@@ -38,6 +38,13 @@ export default function HomePage() {
           >
             Dashboard
           </Link>
+
+          <Link
+            href="/case-study"
+            className="rounded-lg border px-4 py-2"
+          >
+            Case study
+          </Link>
         </div>
       </section>
     </main>
