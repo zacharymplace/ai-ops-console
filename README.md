@@ -147,3 +147,22 @@ Current eval status:
 - Add CI gate for `npm run check`
 - Add deployed demo
 - Add screenshots to README
+
+
+## Feature Flags
+
+The classifier defaults to deterministic mode.
+
+```bash
+AI_CLASSIFIER_MODE=deterministic
+```
+
+To test the future LLM classifier path:
+
+```bash
+AI_CLASSIFIER_MODE=llm
+OPENAI_API_KEY=
+OPENAI_CLASSIFIER_MODEL=gpt-4.1-mini
+```
+
+If LLM classification fails, the system falls back to the deterministic classifier and logs the fallback mode in the audit detail.

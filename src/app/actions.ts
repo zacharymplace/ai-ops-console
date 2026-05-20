@@ -2,7 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import { classifyRequest } from "@/lib/ai/classifier";
+import { classifyRequest, classifyRequestWithMode } from "@/lib/ai/classifier";
 import { appendAuditEvent, getRequests, saveRequest, updateRequest } from "@/lib/data/store";
 import type { OpsRequest } from "@/lib/data/types";
 
@@ -13,7 +13,8 @@ export async function createOpsRequest(formData: FormData) {
     throw new Error("Request text is required.");
   }
 
-  const request = classifyRequest(rawText);
+  const classification = await classifyRequestWithMode(rawText);
+  const request = classification.request;
 
   await saveRequest(request);
 
@@ -23,7 +24,7 @@ export async function createOpsRequest(formData: FormData) {
     createdAt: new Date().toISOString(),
     actor: "system",
     action: "classified_request",
-    detail: `Classified as ${request.category}, risk ${request.riskLevel}, urgency ${request.urgency}.`,
+    detail: `Mode: ${classification.mode}. Classified as ${request.category}, risk ${request.riskLevel}, urgency ${request.urgency}. Rationale: ${classification.rationale}`,
   });
 
   redirect("/requests/review");
