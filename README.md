@@ -40,6 +40,7 @@ This project is designed to show practical AI implementation skill beyond prompt
 - Classifier evaluation suite
 - JSON evaluation report
 - Portfolio case study page
+- Prompt registry
 
 ## Architecture
 
