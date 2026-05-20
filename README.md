@@ -2,6 +2,10 @@
 
 A portfolio-grade prototype for AI-assisted operational request triage, human review, evaluation, and auditability.
 
+## Live Demo
+
+Production demo: https://ai-ops-console-xi.vercel.app
+
 ## Purpose
 
 AI Ops Console demonstrates how AI can support real operational workflows without removing human judgment.
