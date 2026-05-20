@@ -30,6 +30,28 @@ export async function saveRequest(request: OpsRequest): Promise<void> {
   await fs.writeFile(REQUESTS_FILE, JSON.stringify(requests, null, 2));
 }
 
+export async function updateRequest(
+  requestId: string,
+  patch: Partial<OpsRequest>
+): Promise<OpsRequest> {
+  const requests = await getRequests();
+  const index = requests.findIndex((request) => request.id === requestId);
+
+  if (index === -1) {
+    throw new Error(`Request not found: ${requestId}`);
+  }
+
+  const updated = {
+    ...requests[index],
+    ...patch,
+  };
+
+  requests[index] = updated;
+  await fs.writeFile(REQUESTS_FILE, JSON.stringify(requests, null, 2));
+
+  return updated;
+}
+
 export async function getAuditLog(): Promise<AuditEvent[]> {
   await ensureDataFiles();
   const raw = await fs.readFile(AUDIT_FILE, "utf8");

@@ -1,5 +1,21 @@
 [
   {
+    "id": "f73fd036-9260-4ad0-b6d4-9905620ee482",
+    "requestId": "10514f4b-4172-4782-863b-1d52970e6966",
+    "createdAt": "2026-05-20T17:03:25.480Z",
+    "actor": "human",
+    "action": "request_approved",
+    "detail": "Human review completed without additional note."
+  },
+  {
+    "id": "29aba85a-b274-4ef1-a2af-cb7ac06bdee1",
+    "requestId": "10514f4b-4172-4782-863b-1d52970e6966",
+    "createdAt": "2026-05-20T17:03:22.466Z",
+    "actor": "human",
+    "action": "request_reviewed",
+    "detail": "Will be able to switch business to a local competitor."
+  },
+  {
     "id": "ac8b38db-ad28-4f2e-9409-f940d99ec02c",
     "requestId": "10514f4b-4172-4782-863b-1d52970e6966",
     "createdAt": "2026-05-20T16:58:02.932Z",
