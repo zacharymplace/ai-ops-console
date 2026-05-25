@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "eslint",
     "eval:classifier": "tsx scripts/eval-classifier.ts",
-    "check": "npm run lint && npm run eval:classifier"
+    "check": "npm run lint && npm run eval:classifier",
+    "agent:preflight": "bash scripts/agent-preflight.sh",
+    "release:ready": "npm run check && npm run build"
   },
   "dependencies": {
     "next": "^16.2.6",
