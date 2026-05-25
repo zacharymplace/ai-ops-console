@@ -92,6 +92,12 @@ export async function reclassifyOpsRequest(formData: FormData) {
     throw new Error(`Request not found: ${requestId}`);
   }
 
+  if (existing.status !== "new") {
+    throw new Error(
+      `Request ${requestId} has already been decided (status: ${existing.status}). Only new requests can be reclassified.`
+    );
+  }
+
   const reclassified = classifyRequest(existing.rawText);
 
   await updateRequest(requestId, {
