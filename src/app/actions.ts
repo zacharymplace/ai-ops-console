@@ -49,6 +49,18 @@ export async function reviewOpsRequest(formData: FormData) {
     throw new Error(`Unsupported decision: ${decision}`);
   }
 
+  const existing = (await getRequests()).find((r) => r.id === requestId);
+
+  if (!existing) {
+    throw new Error(`Request not found: ${requestId}`);
+  }
+
+  if (existing.status !== "new") {
+    throw new Error(
+      `Request ${requestId} has already been decided (status: ${existing.status}). Only new requests can be reviewed.`
+    );
+  }
+
   const updated = await updateRequest(requestId, {
     status: decision as OpsRequest["status"],
     reviewerNote: reviewerNote || undefined,
