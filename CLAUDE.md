@@ -101,3 +101,12 @@ When uncertain, prefer:
 - small deterministic rules over broad opaque behavior
 - traceable evaluation over subjective confidence
 - boring maintainable code over impressive complexity
+
+## Handoff Pointer
+
+Before implementation work, read:
+
+- docs/CLAUDE_HANDOFF.md
+- docs/qa/REPO_READINESS_SNAPSHOT.md
+
+Do not weaken `npm run release:ready` or the classifier evaluation loop without explicit instruction.
