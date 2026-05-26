@@ -150,7 +150,7 @@ export default async function ReviewQueuePage() {
             <div>
               <h2 className="text-xl font-semibold">Audit trail</h2>
               <p className="mt-1 text-sm text-zinc-500">
-                Most recent system and human review events.
+                Most recent system and human review events, grouped for quick operator reading.
               </p>
             </div>
             <span className="text-xs text-zinc-500">
@@ -161,11 +161,21 @@ export default async function ReviewQueuePage() {
           <div className="mt-4 grid gap-3">
             {auditLog.slice(0, 8).map((event) => (
               <div key={event.id} className="rounded-xl border border-zinc-800 p-3 text-sm">
-                <p className="text-zinc-300">{event.action}</p>
-                <p className="mt-1 text-xs text-zinc-500">
-                  {event.createdAt} · {event.actor}
-                </p>
-                <p className="mt-2 text-zinc-400">{event.detail}</p>
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <p className="font-medium text-zinc-300">{event.action}</p>
+                  <span className="rounded-full border border-zinc-700 px-2 py-1 text-xs text-zinc-400">
+                    {event.actor}
+                  </span>
+                </div>
+
+                <p className="mt-1 text-xs text-zinc-500">{event.createdAt}</p>
+
+                <div className="mt-3 rounded-lg border border-zinc-900 bg-black/30 p-3">
+                  <p className="text-xs uppercase tracking-[0.2em] text-zinc-600">
+                    Decision evidence
+                  </p>
+                  <p className="mt-2 text-zinc-400">{event.detail}</p>
+                </div>
               </div>
             ))}
           </div>
