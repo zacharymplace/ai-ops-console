@@ -42,6 +42,30 @@ function decisionHint(status: OpsRequest["status"]) {
   return "Awaiting human decision.";
 }
 
+function decisionGuide(request: OpsRequest) {
+  if (request.riskLevel === "high") {
+    return "Accept only when the escalation path is clear. Reject when the category, risk, or urgency needs correction.";
+  }
+
+  if (request.riskLevel === "medium") {
+    return "Confirm the owner and next step. Mark reviewed when the classification is usable but does not need approval.";
+  }
+
+  return "Close only after confirming this is routine work or clearly assigning an owner.";
+}
+
+function reviewPlaceholder(request: OpsRequest) {
+  if (request.riskLevel === "high") {
+    return "Escalation owner, business impact, and why this classification is accepted or overridden.";
+  }
+
+  if (request.riskLevel === "medium") {
+    return "Owner, next step, and any reason this does or does not need escalation.";
+  }
+
+  return "Why this can stay low risk, or what would make it worth escalating.";
+}
+
 export function RequestCard({ request }: { request: OpsRequest }) {
   const isPending = request.status === "new";
 
@@ -106,9 +130,17 @@ export function RequestCard({ request }: { request: OpsRequest }) {
         <div className="mt-4 grid gap-3 md:grid-cols-[1fr_auto]">
           <form action={reviewOpsRequest} className="grid gap-3">
             <input type="hidden" name="requestId" value={request.id} />
+
+            <div className="rounded-xl border border-zinc-800 bg-black/30 p-4">
+              <p className="text-xs uppercase tracking-[0.2em] text-zinc-500">
+                Decision guide
+              </p>
+              <p className="mt-2 text-sm text-zinc-300">{decisionGuide(request)}</p>
+            </div>
+
             <textarea
               name="reviewerNote"
-              placeholder="Reviewer note / override rationale"
+              placeholder={reviewPlaceholder(request)}
               className="min-h-24 rounded-xl border border-zinc-800 bg-zinc-950 p-3 text-sm text-zinc-100 outline-none focus:border-zinc-500"
             />
             <div className="flex flex-wrap gap-2">

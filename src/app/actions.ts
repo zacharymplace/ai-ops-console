@@ -72,7 +72,15 @@ export async function reviewOpsRequest(formData: FormData) {
     createdAt: new Date().toISOString(),
     actor: "human",
     action: `request_${updated.status}`,
-    detail: reviewerNote || "Human review completed without additional note.",
+    detail: [
+      `Decision: ${updated.status}.`,
+      `Category: ${existing.category}.`,
+      `Risk: ${existing.riskLevel}.`,
+      `Urgency: ${existing.urgency}/10.`,
+      reviewerNote
+        ? `Reviewer note: ${reviewerNote}`
+        : "Reviewer note: none provided.",
+    ].join(" "),
   });
 
   revalidatePath("/requests/review");
