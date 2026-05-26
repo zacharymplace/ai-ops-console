@@ -57,5 +57,37 @@ export const evalCases: EvalCase[] = [
     expectedRiskLevel: "low",
     expectedUrgency: 3,
     rationale: "Generic input should not be overclassified.",
-  }
+  },
+  {
+    id: "vendor-renewal-deadline",
+    input: "Vendor renewal deadline is approaching in the next 90 days for a support contract.",
+    expectedCategory: "vendor_notice",
+    expectedRiskLevel: "medium",
+    expectedUrgency: 6,
+    rationale: "Vendor renewal timing requires review but is not automatically high risk.",
+  },
+  {
+    id: "overdue-payment-support",
+    input: "Payment is overdue and the customer is asking for billing support today.",
+    expectedCategory: "invoice_or_payment",
+    expectedRiskLevel: "high",
+    expectedUrgency: 9,
+    rationale: "Overdue payment language should escalate invoice/payment urgency.",
+  },
+  {
+    id: "routine-customer-complaint",
+    input: "Customer submitted a complaint about support delays and wants a follow-up today.",
+    expectedCategory: "customer_support",
+    expectedRiskLevel: "medium",
+    expectedUrgency: 6,
+    rationale: "Customer complaint should route to support with medium handling urgency.",
+  },
+  {
+    id: "low-risk-workflow-cleanup",
+    input: "Internal ops wants a process workflow cleanup for the weekly checklist.",
+    expectedCategory: "internal_ops",
+    expectedRiskLevel: "low",
+    expectedUrgency: 3,
+    rationale: "Routine internal workflow cleanup should remain low risk.",
+  },
 ];
