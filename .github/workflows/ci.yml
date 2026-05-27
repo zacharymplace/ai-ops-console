@@ -24,11 +24,8 @@ jobs:
       - name: Install
         run: npm ci
 
-      - name: Lint
-        run: npm run lint
-
-      - name: Classifier evaluation
-        run: npm run eval:classifier
+      - name: Check
+        run: npm run check
 
       - name: Upload eval report
         uses: actions/upload-artifact@v4
