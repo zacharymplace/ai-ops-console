@@ -1,6 +1,18 @@
 const { execSync } = require("node:child_process");
 const { Langfuse } = require("langfuse");
 
+function restoreGeneratedReports() {
+  try {
+    execSync("git restore reports/classifier-eval.json", {
+      encoding: "utf8",
+      stdio: ["ignore", "pipe", "pipe"],
+      shell: true,
+    });
+  } catch {
+    // Ignore restore failures so observability does not mask command results.
+  }
+}
+
 function run(command) {
   const startedAt = Date.now();
 
@@ -11,6 +23,8 @@ function run(command) {
       shell: true,
     });
 
+    restoreGeneratedReports();
+
     return {
       command,
       status: "pass",
@@ -18,6 +32,8 @@ function run(command) {
       output: output.slice(-4000),
     };
   } catch (error) {
+    restoreGeneratedReports();
+
     return {
       command,
       status: "fail",
