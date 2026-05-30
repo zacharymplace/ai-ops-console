@@ -1,0 +1,7 @@
+{
+  "system": "Hermes",
+  "repo": "ai-ops-console",
+  "defaultProject": "hermes-dev",
+  "tracePrefix": "ai-ops-console",
+  "enabled": true
+}
