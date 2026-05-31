@@ -1,5 +1,9 @@
 const { execSync } = require("node:child_process");
+const fs = require("fs");
 const { Langfuse } = require("langfuse");
+
+const standard = JSON.parse(fs.readFileSync("docs/hermes-observability-standard.json", "utf8"));
+const environment = process.env.HERMES_ENVIRONMENT || process.env.NODE_ENV || "development";
 
 function restoreGeneratedReports() {
   try {
@@ -108,6 +112,9 @@ async function main() {
       repo,
       branch,
       commit,
+      environment,
+      standard_version: standard.version,
+      trace_type: "review",
       timestamp: new Date().toISOString(),
       command_count: commands.length,
     },
