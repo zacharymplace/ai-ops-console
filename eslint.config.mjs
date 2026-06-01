@@ -9,7 +9,7 @@ const eslintConfig = defineConfig([
   globalIgnores([
     "scripts/langfuse-review-trace.cjs",
     "scripts/verify-hermes-observability-standard.cjs",
-    "scripts/hermes-readiness.cjs",
+    "scripts/hermes-readiness-package-shim.cjs",
     // Default ignores of eslint-config-next:
     ".next/**",
     "out/**",
