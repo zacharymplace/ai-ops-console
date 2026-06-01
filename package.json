@@ -27,7 +27,7 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
-    "@hermes/readiness": "file:../hermes-observability/hermes-readiness-0.1.0.tgz",
+    "@hermes/readiness": "file:vendor/hermes/hermes-readiness-0.1.0.tgz",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
