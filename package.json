@@ -16,7 +16,7 @@
     "trace:review": "node scripts/langfuse-review-trace.cjs",
     "hermes:observe": "npm run hermes:standard:verify && npm run trace:review && npm run ci:summary",
     "hermes:standard:verify": "node scripts/verify-hermes-observability-standard.cjs",
-    "hermes:readiness": "node scripts/hermes-readiness-package-shim.cjs"
+    "hermes:readiness": "hermes-readiness"
   },
   "dependencies": {
     "langfuse": "^3.38.20",
@@ -27,6 +27,7 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
+    "@hermes/readiness": "file:../hermes-observability/hermes-readiness-0.1.0.tgz",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
