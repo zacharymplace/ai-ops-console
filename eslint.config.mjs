@@ -17,4 +17,6 @@ const eslintConfig = defineConfig([
   ]),
 ]);
 
+const hermesReadinessIgnore = { ignores: ["scripts/hermes-readiness.cjs"] };
+
 export default eslintConfig;
