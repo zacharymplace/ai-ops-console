@@ -16,7 +16,7 @@
     "trace:review": "node scripts/langfuse-review-trace.cjs",
     "hermes:observe": "npm run hermes:standard:verify && npm run trace:review && npm run ci:summary",
     "hermes:standard:verify": "node scripts/verify-hermes-observability-standard.cjs",
-    "hermes:readiness": "node scripts/hermes-readiness.js"
+    "hermes:readiness": "node scripts/hermes-readiness.cjs"
   },
   "dependencies": {
     "langfuse": "^3.38.20",
