@@ -8,14 +8,15 @@
     "start": "next start",
     "lint": "eslint",
     "eval:classifier": "tsx scripts/eval-classifier.ts",
-    "check": "npm run lint && npm run eval:classifier:check",
+    "check": "npm run lint && npm run eval:classifier:check && npm run hermes:readiness",
     "agent:preflight": "bash scripts/agent-preflight.sh",
     "release:ready": "npm run check && npm run build",
     "eval:classifier:check": "bash scripts/eval-classifier-check.sh",
     "ci:summary": "bash scripts/github-ci-summary.sh",
     "trace:review": "node scripts/langfuse-review-trace.cjs",
     "hermes:observe": "npm run hermes:standard:verify && npm run trace:review && npm run ci:summary",
-    "hermes:standard:verify": "node scripts/verify-hermes-observability-standard.cjs"
+    "hermes:standard:verify": "node scripts/verify-hermes-observability-standard.cjs",
+    "hermes:readiness": "node scripts/hermes-readiness.js"
   },
   "dependencies": {
     "langfuse": "^3.38.20",
