@@ -35,6 +35,16 @@ function reviewFocus(request: OpsRequest) {
   return "Check whether this is routine noise or needs a clearer owner before closing.";
 }
 
+function formatCreatedAt(createdAt: string) {
+  const parsed = new Date(createdAt);
+  if (Number.isNaN(parsed.getTime())) return createdAt;
+
+  return parsed.toLocaleString(undefined, {
+    dateStyle: "medium",
+    timeStyle: "short"
+  });
+}
+
 function decisionHint(status: OpsRequest["status"]) {
   if (status === "approved") return "Accepted by a human reviewer.";
   if (status === "rejected") return "Overridden or rejected by a human reviewer.";
@@ -95,7 +105,7 @@ export function RequestCard({ request }: { request: OpsRequest }) {
             {request.rawText}
           </p>
           <p className="mt-3 text-xs text-zinc-500">
-            Created {request.createdAt}
+            Created {formatCreatedAt(request.createdAt)}
           </p>
         </div>
 
