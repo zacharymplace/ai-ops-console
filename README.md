@@ -145,7 +145,7 @@ Current eval status:
 - Add role-based review controls
 - Add expanded evaluation coverage
 - CI gate runs `npm run check`
-- Add deployed demo
+- Keep the deployed demo validated against the release checklist
 - Add screenshots to README
 
 

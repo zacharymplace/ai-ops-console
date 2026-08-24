@@ -20,7 +20,7 @@ Which runs:
 
 ## Current Classifier Eval
 
-The classifier evaluation currently has 6 cases:
+The classifier evaluation currently has 10 cases:
 
 - vendor-location-closures
 - invoice-consolidation
