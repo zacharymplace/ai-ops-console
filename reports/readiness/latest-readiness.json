@@ -1,10 +1,10 @@
 {
   "schema_version": "0.1.0",
-  "tool_version": "hermes-observability@0.1.0",
-  "generated_at": "2026-06-01T01:36:06.212Z",
+  "tool_version": "@hermes/readiness@0.1.0",
+  "generated_at": "2026-08-17T11:56:29.552Z",
   "status": "pass",
   "standard_version": "0.1.0",
-  "fixture": "fixtures/readiness/valid-agent-trace.json",
+  "fixture": "node_modules/@hermes/readiness/fixtures/valid-agent-trace.json",
   "summary": {
     "fail": 0,
     "warn": 0

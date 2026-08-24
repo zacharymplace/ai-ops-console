@@ -2,13 +2,13 @@
 
 Status: **PASS**
 
-Generated at: 2026-06-01T01:36:06.212Z
+Generated at: 2026-08-17T11:56:29.552Z
 
 ## Summary
 
 - Failures: 0
 - Warnings: 0
-- Fixture: `fixtures/readiness/valid-agent-trace.json`
+- Fixture: `node_modules/@hermes/readiness/fixtures/valid-agent-trace.json`
 - Standard version: `0.1.0`
 
 ## Checks
