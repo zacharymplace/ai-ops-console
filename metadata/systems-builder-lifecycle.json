@@ -1,0 +1,58 @@
+{
+  "schema_version": "systems-builder-lifecycle-v1",
+  "system_id": "ai-ops-console",
+  "display_name": "AI Ops Console",
+  "phase": "validate",
+  "condition": "waiting",
+  "source": {
+    "repository": "zacharymplace/ai-ops-console",
+    "path": ".",
+    "branch": "main",
+    "commit": "9f79f5f"
+  },
+  "evidence": [
+    {
+      "kind": "validation",
+      "reference": "npm run check",
+      "result": "pass-10-eval-cases"
+    },
+    {
+      "kind": "readiness",
+      "reference": "npm run hermes:readiness",
+      "result": "pass"
+    },
+    {
+      "kind": "deployment",
+      "reference": "https://ai-ops-console-xi.vercel.app",
+      "result": "pass-http-200"
+    },
+    {
+      "kind": "release-review",
+      "reference": "docs/RELEASE_CHECKLIST.md",
+      "result": "waiting-manual-review"
+    }
+  ],
+  "last_verified_at": "2026-08-24T18:19:40Z",
+  "next_action": {
+    "description": "Complete one controlled synthetic request walkthrough on the deployed demo, verify review and audit behavior, and record the result without using sensitive operational data.",
+    "command": "git status --short"
+  },
+  "blockers": [
+    "No real operational user or outcome evidence has been recorded.",
+    "The manual release checklist remains incomplete.",
+    "Persistence, authentication, and role-based controls remain prototype-level.",
+    "The installed dependency audit reports six high-severity vulnerabilities."
+  ],
+  "capabilities": [
+    "operational-request-intake",
+    "deterministic-classification",
+    "risk-and-urgency-routing",
+    "human-review-queue",
+    "audited-reclassification",
+    "dashboard-metrics",
+    "classifier-evaluation",
+    "prompt-registry",
+    "Hermes-readiness-integration",
+    "deployed-portfolio-demo"
+  ]
+}
