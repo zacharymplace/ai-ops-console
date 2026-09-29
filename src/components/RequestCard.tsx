@@ -2,14 +2,14 @@ import type { OpsRequest } from "@/lib/data/types";
 import { reviewOpsRequest, reclassifyOpsRequest } from "@/app/actions";
 
 function riskClass(risk: OpsRequest["riskLevel"]) {
-  if (risk === "high") return "border-spot border-l-[6px] bg-spot-tint text-spot font-bold";
+  if (risk === "high") return "border-spot border-l-[6px] bg-spot-tint text-ink font-bold";
   if (risk === "medium") return "border-dashed border-spot bg-spot-tint text-ink";
   return "border-data border-l-[6px] bg-data-tint text-data";
 }
 
 function statusClass(status: OpsRequest["status"]) {
   if (status === "approved") return "border-data border-l-[6px] bg-data-tint text-data";
-  if (status === "rejected") return "border-spot border-l-[6px] bg-spot-tint text-spot font-bold";
+  if (status === "rejected") return "border-spot border-l-[6px] bg-spot-tint text-ink font-bold";
   if (status === "reviewed") return "border-dotted border-data border-l-[6px] bg-data-tint text-ink";
   return "border-ink text-ink-muted";
 }
@@ -157,7 +157,7 @@ export function RequestCard({ request }: { request: OpsRequest }) {
               <button
                 name="decision"
                 value="approved"
-                className="bg-spot px-3 py-2 text-sm font-semibold text-paper"
+                className="bg-spot px-3 py-2 text-sm font-semibold text-on-spot"
               >
                 Accept
               </button>

@@ -13,7 +13,7 @@ export default async function DashboardPage() {
 
       <section className="mt-10 space-y-6">
         <p className="text-sm uppercase tracking-[0.3em] text-ink-muted">Dashboard</p>
-        <h1 className="text-5xl font-semibold tracking-tight">Local operating report.</h1>
+        <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Local operating report.</h1>
 
         <div className="grid gap-4 md:grid-cols-4">
           {[

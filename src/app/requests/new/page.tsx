@@ -10,7 +10,7 @@ export default function NewRequestPage() {
 
       <section className="mt-10 space-y-5">
         <p className="text-sm uppercase tracking-[0.3em] text-ink-muted">Submit request</p>
-        <h1 className="text-5xl font-semibold tracking-tight">Classify operational noise.</h1>
+        <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Classify operational noise.</h1>
         <p className="max-w-2xl text-ink-muted">
           Paste a vendor notice, invoice change, customer issue, compliance note, or internal ops request.
           The system classifies it, saves it locally, and routes it into human review.
@@ -22,7 +22,7 @@ export default function NewRequestPage() {
             defaultValue={example}
             className="min-h-56 w-full border-[1.5px] border-ink bg-paper p-4 text-sm leading-6 text-ink outline-none focus:border-spot"
           />
-          <button className="bg-spot px-4 py-2 font-semibold text-paper">
+          <button className="bg-spot px-4 py-2 font-semibold text-on-spot">
             Classify request
           </button>
         </form>

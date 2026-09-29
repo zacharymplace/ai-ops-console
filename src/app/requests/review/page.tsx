@@ -59,7 +59,7 @@ export default async function ReviewQueuePage() {
             <p className="text-sm uppercase tracking-[0.3em] text-ink-muted">
               Review queue
             </p>
-            <h1 className="mt-3 text-5xl font-semibold tracking-tight">
+            <h1 className="mt-3 text-4xl font-semibold tracking-tight sm:text-5xl">
               Operator review loop.
             </h1>
             <p className="mt-3 max-w-3xl text-ink-muted">
@@ -71,7 +71,7 @@ export default async function ReviewQueuePage() {
 
           <Link
             href="/requests/new"
-            className="ml-auto bg-spot px-4 py-2 text-sm font-semibold text-paper"
+            className="ml-auto bg-spot px-4 py-2 text-sm font-semibold text-on-spot"
           >
             New request
           </Link>

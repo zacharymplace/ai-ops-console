@@ -7,7 +7,7 @@ export default function CaseStudyPage() {
 
       <section className="mt-10 space-y-6">
         <p className="text-sm uppercase tracking-[0.3em] text-ink-muted">Case study</p>
-        <h1 className="text-5xl font-semibold tracking-tight">AI Ops Console v0.2</h1>
+        <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">AI Ops Console v0.2</h1>
         <p className="text-lg leading-8 text-ink-muted">
           A small operational triage console that classifies messy business notices,
           preserves a human review layer, and records an audit trail.

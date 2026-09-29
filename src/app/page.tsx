@@ -8,7 +8,7 @@ export default function HomePage() {
           AI Systems Lab
         </p>
 
-        <h1 className="text-5xl font-semibold tracking-tight">
+        <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
           AI Ops Console
         </h1>
 
@@ -17,10 +17,10 @@ export default function HomePage() {
           human review, auditability, and operational decision support.
         </p>
 
-        <div className="flex gap-3">
+        <div className="flex flex-wrap gap-3">
           <Link
             href="/requests/new"
-            className="bg-spot px-4 py-2 font-condensed font-bold uppercase tracking-widest text-paper"
+            className="bg-spot px-4 py-2 font-condensed font-bold uppercase tracking-widest text-on-spot"
           >
             Submit request
           </Link>

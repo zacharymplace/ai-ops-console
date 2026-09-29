@@ -12,6 +12,7 @@
   --color-ink-muted: var(--ink-muted);
   --color-rule: var(--rule);
   --color-spot: var(--spot);
+  --color-on-spot: var(--on-spot);
   --color-spot-tint: var(--spot-tint);
   --color-data: var(--data);
   --color-data-tint: var(--data-tint);
