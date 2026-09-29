@@ -16,7 +16,7 @@ export function Nav() {
         <Link
           key={link.href}
           href={link.href}
-          className="border-[1.5px] px-3 py-1 text-ink-2 hover:bg-paper-3"
+          className="border-[1.5px] px-3 py-1 font-condensed font-bold uppercase tracking-widest text-ink-2 hover:bg-paper-3"
         >
           {link.label}
         </Link>

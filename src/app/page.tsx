@@ -20,7 +20,7 @@ export default function HomePage() {
         <div className="flex gap-3">
           <Link
             href="/requests/new"
-            className="bg-ink px-4 py-2 text-paper"
+            className="bg-spot px-4 py-2 font-condensed font-bold uppercase tracking-widest text-paper"
           >
             Submit request
           </Link>
