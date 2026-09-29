@@ -30,7 +30,7 @@ function SummaryTile({
   return (
     <article className="border-[1.5px] border-ink bg-paper-2 p-5">
       <p className="text-xs uppercase tracking-[0.2em] text-ink-muted">{label}</p>
-      <p className="mt-3 text-4xl font-semibold text-ink">{value}</p>
+      <p className="mt-3 text-3xl font-semibold text-ink [overflow-wrap:anywhere] xl:text-4xl">{value}</p>
       <p className="mt-2 text-sm text-ink-muted">{detail}</p>
     </article>
   );
