@@ -6,12 +6,12 @@ const example = `Vendor is closing business locations that impact our stores in 
 export default function NewRequestPage() {
   return (
     <main className="mx-auto max-w-4xl p-8">
-      <Link href="/" className="text-sm text-zinc-500">← Home</Link>
+      <Link href="/" className="text-sm text-ink-muted">← Home</Link>
 
       <section className="mt-10 space-y-5">
-        <p className="text-sm uppercase tracking-[0.3em] text-zinc-500">Submit request</p>
+        <p className="text-sm uppercase tracking-[0.3em] text-ink-muted">Submit request</p>
         <h1 className="text-5xl font-semibold tracking-tight">Classify operational noise.</h1>
-        <p className="max-w-2xl text-zinc-400">
+        <p className="max-w-2xl text-ink-muted">
           Paste a vendor notice, invoice change, customer issue, compliance note, or internal ops request.
           The system classifies it, saves it locally, and routes it into human review.
         </p>
@@ -20,9 +20,9 @@ export default function NewRequestPage() {
           <textarea
             name="rawText"
             defaultValue={example}
-            className="min-h-56 w-full rounded-2xl border border-zinc-800 bg-zinc-950 p-4 text-sm leading-6 text-zinc-100 outline-none focus:border-zinc-500"
+            className="min-h-56 w-full border-[1.5px] border-ink bg-paper p-4 text-sm leading-6 text-ink outline-none focus:border-spot"
           />
-          <button className="rounded-lg bg-zinc-100 px-4 py-2 font-semibold text-zinc-950">
+          <button className="bg-spot px-4 py-2 font-semibold text-paper">
             Classify request
           </button>
         </form>

@@ -28,10 +28,10 @@ function SummaryTile({
   detail: string;
 }) {
   return (
-    <article className="rounded-2xl border border-zinc-800 bg-zinc-950/60 p-5">
-      <p className="text-xs uppercase tracking-[0.2em] text-zinc-500">{label}</p>
-      <p className="mt-3 text-4xl font-semibold text-zinc-100">{value}</p>
-      <p className="mt-2 text-sm text-zinc-500">{detail}</p>
+    <article className="border-[1.5px] border-ink bg-paper-2 p-5">
+      <p className="text-xs uppercase tracking-[0.2em] text-ink-muted">{label}</p>
+      <p className="mt-3 text-4xl font-semibold text-ink">{value}</p>
+      <p className="mt-2 text-sm text-ink-muted">{detail}</p>
     </article>
   );
 }
@@ -49,20 +49,20 @@ export default async function ReviewQueuePage() {
 
   return (
     <main className="mx-auto max-w-6xl p-8">
-      <Link href="/" className="text-sm text-zinc-500">
+      <Link href="/" className="text-sm text-ink-muted">
         ← Home
       </Link>
 
       <section className="mt-10 space-y-6">
         <div className="flex flex-wrap items-end gap-4">
           <div>
-            <p className="text-sm uppercase tracking-[0.3em] text-zinc-500">
+            <p className="text-sm uppercase tracking-[0.3em] text-ink-muted">
               Review queue
             </p>
             <h1 className="mt-3 text-5xl font-semibold tracking-tight">
               Operator review loop.
             </h1>
-            <p className="mt-3 max-w-3xl text-zinc-400">
+            <p className="mt-3 max-w-3xl text-ink-muted">
               Review the highest-priority item first, confirm or override the
               classification, and leave enough rationale for the audit trail to
               explain the decision later.
@@ -71,7 +71,7 @@ export default async function ReviewQueuePage() {
 
           <Link
             href="/requests/new"
-            className="ml-auto rounded-lg bg-zinc-100 px-4 py-2 text-sm font-semibold text-zinc-950"
+            className="ml-auto bg-spot px-4 py-2 text-sm font-semibold text-paper"
           >
             New request
           </Link>
@@ -105,19 +105,19 @@ export default async function ReviewQueuePage() {
         </div>
 
         {nextRequest && (
-          <section className="rounded-2xl border border-zinc-700 bg-zinc-950/70 p-5">
-            <p className="text-xs uppercase tracking-[0.2em] text-zinc-500">
+          <section className="border-[1.5px] border-ink bg-paper-2 p-5">
+            <p className="text-xs uppercase tracking-[0.2em] text-ink-muted">
               Recommended first pass
             </p>
             <div className="mt-3 flex flex-wrap items-center justify-between gap-3">
               <div>
                 <h2 className="text-2xl font-semibold">{priorityLabel(nextRequest)}</h2>
-                <p className="mt-1 text-sm text-zinc-400">
+                <p className="mt-1 text-sm text-ink-muted">
                   Start with this request because it has the highest open
                   priority score in the queue.
                 </p>
               </div>
-              <div className="rounded-full border border-zinc-700 px-3 py-1 text-sm text-zinc-300">
+              <div className="border-[1.5px] border-ink px-3 py-1 text-sm text-ink-2">
                 {nextRequest.riskLevel} risk · urgency {nextRequest.urgency}/10
               </div>
             </div>
@@ -127,7 +127,7 @@ export default async function ReviewQueuePage() {
         <section className="space-y-4">
           <div>
             <h2 className="text-2xl font-semibold">Requests</h2>
-            <p className="mt-1 text-sm text-zinc-500">
+            <p className="mt-1 text-sm text-ink-muted">
               Sorted by pending status, risk, and urgency.
             </p>
           </div>
@@ -138,43 +138,43 @@ export default async function ReviewQueuePage() {
                 <RequestCard key={request.id} request={request} />
               ))
             ) : (
-              <div className="rounded-2xl border border-zinc-800 p-6 text-zinc-400">
+              <div className="border-[1.5px] border-ink p-6 text-ink-muted">
                 No requests yet. Submit one to test the review loop.
               </div>
             )}
           </div>
         </section>
 
-        <section className="rounded-2xl border border-zinc-800 bg-zinc-950/60 p-5">
+        <section className="border-[1.5px] border-ink bg-paper-2 p-5">
           <div className="flex flex-wrap items-end justify-between gap-3">
             <div>
               <h2 className="text-xl font-semibold">Audit trail</h2>
-              <p className="mt-1 text-sm text-zinc-500">
+              <p className="mt-1 text-sm text-ink-muted">
                 Most recent system and human review events, grouped for quick operator reading.
               </p>
             </div>
-            <span className="text-xs text-zinc-500">
+            <span className="text-xs text-ink-muted">
               Showing latest {Math.min(auditLog.length, 8)} of {auditLog.length}
             </span>
           </div>
 
           <div className="mt-4 grid gap-3">
             {auditLog.slice(0, 8).map((event) => (
-              <div key={event.id} className="rounded-xl border border-zinc-800 p-3 text-sm">
+              <div key={event.id} className="border-[1.5px] border-ink p-3 text-sm">
                 <div className="flex flex-wrap items-center justify-between gap-2">
-                  <p className="font-medium text-zinc-300">{event.action}</p>
-                  <span className="rounded-full border border-zinc-700 px-2 py-1 text-xs text-zinc-400">
+                  <p className="font-medium text-ink-2">{event.action}</p>
+                  <span className="border-[1.5px] border-ink px-2 py-1 text-xs text-ink-muted">
                     {event.actor}
                   </span>
                 </div>
 
-                <p className="mt-1 text-xs text-zinc-500">{event.createdAt}</p>
+                <p className="mt-1 text-xs text-ink-muted">{event.createdAt}</p>
 
-                <div className="mt-3 rounded-lg border border-zinc-900 bg-black/30 p-3">
-                  <p className="text-xs uppercase tracking-[0.2em] text-zinc-600">
+                <div className="mt-3 border-[1.5px] border-ink bg-paper-2 p-3">
+                  <p className="text-xs uppercase tracking-[0.2em] text-ink-muted">
                     Decision evidence
                   </p>
-                  <p className="mt-2 text-zinc-400">{event.detail}</p>
+                  <p className="mt-2 text-ink-muted">{event.detail}</p>
                 </div>
               </div>
             ))}
